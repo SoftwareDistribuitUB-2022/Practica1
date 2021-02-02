@@ -5,7 +5,7 @@ date: November 2020
 title: Pràctica 1 - Client Servidor (Software distribüit)
 ---
 
-![image](sword.png){width="100%"}
+![image](figures/sword.png){width="100%"}
 
 Objectiu
 ========
