@@ -260,7 +260,7 @@ Aquí teniu la llista d'insults estàndards del Carib.
 
 -   **Insult**: ¡He oído que eres un soplón despreciable!
 
--   **Rèplica**-- Qué pena me da que nadie haya oído hablar de ti
+    **Rèplica**-- Qué pena me da que nadie haya oído hablar de ti
 
 -   **Insult**: ¡La gente cae a mis pies al verme llegar!
 
