@@ -210,7 +210,7 @@ Insults {#sec:insults}
 
 Aquí teniu la llista d'insults estàndards del Carib.
 
--   **Insult**: ?'Has dejado ya de usar pañales?
+-   **Insult**: ¿Has dejado ya de usar pañales?
 
     **Rèplica**: ?'Por qué? ?'Acaso querías pedir uno prestado?
 
