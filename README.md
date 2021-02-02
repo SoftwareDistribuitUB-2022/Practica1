@@ -186,9 +186,9 @@ Batalla d'insults
 
 La batalla d'insults d'espasa és una activitat que tot pirata ha de
 dominar. A tot el Carib, molts pirates fan servir insults estàndards.
-Durant les baralles un pirata llançarà un insult com ara *\"?'Has dejado
+Durant les baralles un pirata llançarà un insult com ara *\"¿Has dejado
 ya de usar pañales?\"*. L'adversari es veurà obligat a respondre amb una
-resposta enginyosa, per exemple *\"?'Por qué? ?'Acaso querías pedir uno
+resposta enginyosa, per exemple *\"¿Por qué? ¿Acaso querías pedir uno
 prestado?\"*. Si la resposta és prou insultant guanyarà la baralla. Qui
 mantingui el domini podrà llançar el següent insult. Dos insults amb
 èxit asseguraran la victòria dels combatents. L'objectiu del jugador és
@@ -212,61 +212,61 @@ Aquí teniu la llista d'insults estàndards del Carib.
 
 -   **Insult**: ¿Has dejado ya de usar pañales?
 
-    **Rèplica**: ?'Por qué? ?'Acaso querías pedir uno prestado?
+    **Rèplica**: ¿Por qué? ¿Acaso querías pedir uno prestado?
 
--   **Insult**: !'No hay palabras para describir lo asqueroso que eres!
+-   **Insult**: ¡No hay palabras para describir lo asqueroso que eres!
 
     **Rèplica**: Sí que las hay, sólo que nunca las has aprendido.
 
--   **Insult**: !'He hablado con simios más educados que tu!
+-   **Insult**: ¡He hablado con simios más educados que tu!
 
     **Rèplica**-- Me alegra que asistieras a tu reunión familiar diaria.
 
--   **Insult** : !'Llevarás mi espada como si fueras un pincho moruno!
+-   **Insult** : ¡Llevarás mi espada como si fueras un pincho moruno!
 
     **Rèplica**: Primero deberías dejar de usarla como un plumero.
 
--   **Insult**: !'Luchas como un ganadero!
+-   **Insult**: ¡Luchas como un ganadero!
 
     **Rèplica**: Qué apropiado, tú peleas como una vaca.
 
--   **Insult**: !'No pienso aguantar tu insolencia aquí sentado!
+-   **Insult**: ¡No pienso aguantar tu insolencia aquí sentado!
 
-    **Rèplica**-- Ya te están fastidiando otra vez las almorranas, ?'Eh?
+    **Rèplica**-- Ya te están fastidiando otra vez las almorranas, ¿Eh?
 
--   **Insult**: !'Mi pañuelo limpiará tu sangre!
+-   **Insult**: ¡Mi pañuelo limpiará tu sangre!
 
-    **Rèplica**-- Ah, ?'Ya has obtenido ese trabajo de barrendero?
+    **Rèplica**-- Ah, ¿Ya has obtenido ese trabajo de barrendero?
 
--   **Insult**: !'Ha llegado tu HORA, palurdo de ocho patas!
+-   **Insult**: ¡Ha llegado tu HORA, palurdo de ocho patas!
 
-    **Rèplica** Y yo tengo un SALUDO para ti, ?'Te enteras?
+    **Rèplica** Y yo tengo un SALUDO para ti, ¿Te enteras?
 
--   **Insult**: !'Una vez tuve un perro más listo que tu!
+-   **Insult**: ¡Una vez tuve un perro más listo que tu!
 
     **Rèplica**-- Te habrá enseñado todo lo que sabes.
 
--   **Insult**: !'Nadie me ha sacado sangre jamás, y nadie lo hará!
+-   **Insult**: ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
 
-    **Rèplica**-- ?'TAN rápido corres?
+    **Rèplica**-- ¿TAN rápido corres?
 
--   **Insult**: !'Me das ganas de vomitar!
+-   **Insult**: ¡Me das ganas de vomitar!
 
     **Rèplica**-- Me haces pensar que alguien ya lo ha hecho.
 
--   **Insult**: !'Tienes los modales de un mendigo!
+-   **Insult**: ¡Tienes los modales de un mendigo!
 
     **Rèplica**-- Quería asegurarme de que estuvieras a gusto conmigo.
 
--   **Insult**: !'He oído que eres un soplón despreciable!
+-   **Insult**: ¡He oído que eres un soplón despreciable!
 
 -   **Rèplica**-- Qué pena me da que nadie haya oído hablar de ti
 
--   **Insult**: !'La gente cae a mis pies al verme llegar!
+-   **Insult**: ¡La gente cae a mis pies al verme llegar!
 
-    **Rèplica**-- ?'Incluso antes de que huelan tu aliento?
+    **Rèplica**-- ¿Incluso antes de que huelan tu aliento?
 
--   **Insult**: !'Demasiado bobo para mi nivel de inteligencia!
+-   **Insult**: ¡Demasiado bobo para mi nivel de inteligencia!
 
     **Rèplica**-- Estaría acabado si la usases alguna vez.
 
@@ -348,12 +348,12 @@ següents codis d'operacions:
 
 Els possibles missatges d'error són:
 
--   !' Código de operación inválido, marinero de agua dulce! !'Hasta la
+-   ¡ Código de operación inválido, marinero de agua dulce! ¡Hasta la
     vista!
 
--   !'Mensaje incompleto, grumete! !'Hasta la vista!
+-   ¡Mensaje incompleto, grumete! ¡Hasta la vista!
 
--   !'Me he candado de esperar tus mensajes, mequetrefe! !'Hasta la
+-   ¡Me he candado de esperar tus mensajes, mequetrefe! ¡Hasta la
     vista!
 
 Protocol
