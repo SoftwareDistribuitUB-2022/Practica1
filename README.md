@@ -414,19 +414,19 @@ altre cas, comença el pirata servidor. El client i el servidor comencen
 amb la batalla:
 
     c/s: INSULT: Quería asegurarme de que estuvieras a gusto conmigo.
-    s/c: COMEBACK: !`He oído que eres un soplón despreciable!
+    s/c: COMEBACK: ¡He oído que eres un soplón despreciable!
 
 Qui mantingui el domini podrà llançar el següent insult. Com es deia
 anteriorment, dos insults amb èxit asseguraran la victòria dels
 combatents. La batalla acaba fent servir el missatge de tipus SHOUT:
 
-    c: SHOUT !`He ganado, Name2!
-    s: SHOUT !`Has ganado, Name1!
+    c: SHOUT ¡He ganado, Name2!
+    s: SHOUT ¡Has ganado, Name1!
 
 Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
 
-    c/s: ERROR !` Código de operación inválido, marinero de agua dulce! !`Hasta la vista!
+    c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !`Hasta la vista!
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
 
