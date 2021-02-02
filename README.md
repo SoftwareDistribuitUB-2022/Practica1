@@ -196,9 +196,7 @@ estar preparat per derrotar la Sword Master de la illa Mêlée com un dels
 tres assajos per demostrar-se digne de convertir-se en pirata.
 
 El jugador comença amb dos insults/rèpliques que ha après anteriorment i
-hi ha una llista de 16 (veure secció
-[\[sec:instults\]](#sec:instults){reference-type="ref"
-reference="sec:instults"}). Després d'aprendre al menys 4 parelles
+hi ha una llista de 16 (veure secció següent). Després d'aprendre al menys 4 parelles
 d'insults/rèpliques i guanyar al menys 3 duels (per guanyar un duel has
 de guanyar 2 vegades al pirata, bé insultant sense que aconsegueixi
 replicarte, o bé replicant correctament els seus insults). Quan això
