@@ -280,11 +280,17 @@ següents codis d'operacions:
 
   ---------- ---
   HELLO      1
+  
   HASH       2
+  
   SECRET     3
+  
   INSULT     4
+  
   COMEBACK   5
+  
   SHOUT      6
+  
   ERROR      7
   ---------- ---
 
