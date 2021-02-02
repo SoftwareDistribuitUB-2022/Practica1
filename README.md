@@ -205,7 +205,7 @@ replicarte, o bé replicant correctament els seus insults). Quan això
 passi els teus enemics et diran que ets tan bo que podries lluitar amb
 la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 
-Insults {#sec:insults}
+Insults 
 =======
 
 Aquí teniu la llista d'insults estàndards del Carib.
