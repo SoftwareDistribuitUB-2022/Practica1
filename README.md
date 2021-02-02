@@ -278,27 +278,21 @@ Missatges
 El client (c) i el servidor (s) suporta 7 tipus de missatges amb els
 següents codis d'operacions:
 
-  ---------- ---
-  HELLO      1
-  
-  HASH       2
-  
-  SECRET     3
-  
-  INSULT     4
-  
-  COMEBACK   5
-  
-  SHOUT      6
-  
-  ERROR      7
-  ---------- ---
+
+- HELLO      1
+-  HASH       2 
+-  SECRET     3
+-  INSULT     4
+-  COMEBACK   5
+-  SHOUT      6
+-  ERROR      7
+ 
 
 -   La capçalera d'un missatge conté el codi d'operació associat amb
     aquest paquet. Els paquets HELLO (codi d'operació 1) té el format
     que es mostra en la Figura 1, on *Name* és el nom del pirata.
 
-```{=html}
+
 <!-- -->
 ```
                                  1 byte       string    1 byte     
