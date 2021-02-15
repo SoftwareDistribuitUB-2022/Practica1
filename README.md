@@ -26,8 +26,8 @@ Tasques a realitzar
 
 -   S'ha de fer una implementació del servidor multi-thread que tant
     serveixi per a que el jugador jugui contra la *màquina* (1 player)
-    (Especificació 1 player) com per a que jugui contra un altre
-    client connectat (2 player) (Variant 2 players)
+     com per a que jugui contra un altre
+    client connectat (2 player)
 
 -   El servidor ha d'escriure un log de l'interacció amb el client a
     fitxer seguint el format especificat.
@@ -199,6 +199,8 @@ replicarte, o bé replicant correctament els seus insults). Quan això
 passi els teus enemics et diran que ets tan bo que podries lluitar amb
 la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 
+
+
 Insults 
 =======
 
@@ -267,6 +269,10 @@ Aquí teniu la llista d'insults estàndards del Carib.
 -   **Insult**: Obtuve esta cicatriz en una batalla a muerte!
 
     **Rèplica**-- Espero que ya hayas aprendido a no tocarte la nariz.
+
+Implementació Client
+=========
+
 
 Missatges
 =========
@@ -412,7 +418,11 @@ Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
 
     c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !`Hasta la vista!
+    
+ Versió 2 jugadors
+==================  
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
 
 [^2]: Mireu: *https://www.baeldung.com/sha-256-hashing-java*
+
