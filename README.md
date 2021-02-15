@@ -26,8 +26,8 @@ Tasques a realitzar
 
 -   S'ha de fer una implementació del servidor multi-thread que tant
     serveixi per a que el jugador jugui contra la *màquina* (1 player)
-    (Especificació 1 player v0.1) com per a que jugui contra un altre
-    client connectat (2 player) (Variant 2 players v0.1)
+    (Especificació 1 player) com per a que jugui contra un altre
+    client connectat (2 player) (Variant 2 players)
 
 -   El servidor ha d'escriure un log de l'interacció amb el client a
     fitxer seguint el format especificat.
@@ -40,20 +40,21 @@ Tasques a realitzar
 Calendari
 =========
 
--   xx/xx/2021: a) Creació de grups. b) Preparació del GitHub. c)
+-   17/02/2021: a) Creació de grups. b) Preparació del GitHub. c)
     Realiztizació de la prac0
 
--   xx/xx/2021 Disseny del sistema distribuït. Implementació Protocol.
+-   24/02/2021 Disseny del sistema distribuït. Implementació Protocol.
 
--   xx/xx/2021 Implementació Client.
+-   03/03/2021 Implementació Client.
 
--   xx/xx/2021 Implementació Servidor amb Multithread 1 Player.
+-   10/03/2021 Implementació Servidor amb Multithread 1 Player.
 
--   xx/xx/2021 Implementació Servidor amb Multithread 2 Players.
+-   17/03/2021 Implementació Servidor amb Multithread 2 Players.
 
--   xx/xx/2021 Sessió de Test creuat.
+-   24/03/2021 Sessió de Test creuat. Tasca Taller
 
--   xx/xx/2021 Entrega codi, dossier i log execució al CV.
+-   30/03/2021 Entrega codi, memòria i log execució al CV. Tasca Fitxer
+
 
 Notes importants
 ================
@@ -62,14 +63,11 @@ Notes importants
 
 -   En mode manual l'usuari ha de poder jugar tantes partides com
     vulgui. Haurà d'introduir el seu Identificador de jugador i a
-    continuació podrà fer tantes partides com vulgui o pugui. En cas de
-    no tenir suficients diners per entrar a una partida haurà de sortir.
+    continuació podrà fer tantes partides com vulgui o pugui. 
 
 -   S'haurà de poder sortir en qualsevol moment de la partida, tallant
-    la comunicació amb el servidor. La partida però serà contada com a
-    perduda i s'esborrarà del seu crèdit tots els diners apostats fins
-    llavors.
-
+    la comunicació amb el servidor. 
+    
 -   En cada sessió de pràctiques es comprovarà si s'ha arribat a
     l'objectiu fixat en el calendari per la sessió anterior. Feu un bon
     ús de la programació Orientada a Objectes i de la metodologia
@@ -120,7 +118,7 @@ Execució
     port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
     es jugarà en mode 1 player o mode 2 players
 
--   En el client s'especifica l'opció maquina seridora (-s) on
+-   En el client s'especifica l'opció maquina servidora (-s) on
     s'especificarà la IP del servidor i l'opció port (-p) on
     s'especificarà el port d'escolta del servidor.
 
@@ -153,12 +151,11 @@ Sortida demanada
 Entregues
 =========
 
--   Actualitzar codi a Github cada cop que es treballa amb la pràcitca.
-
--   Sessió Presencial de Test obligatòria (Mínim un component de la
+-   Actualitzar codi a Github mitjançant Pull Requests amb Peer Code Review.
+-   Sessió de Test obligatòria (Mínim un component de la
     parella).
 
--   A CampusVirtual: 24/03/2019 23.55h.
+-   A CampusVirtual: 30/03/2021 23.55h.
 
 Avaluació
 =========
@@ -170,16 +167,16 @@ Avaluació
     Es recomana que feu els vostres propis JUnit per provar el vostre
     codi amb els demés en la sessió de test.
 
--   En cas de que es superi tot el conjunt de proves satisfactòriament
-    es ponderarà de la següent forma:
+-   En cas de que la pràctica funcioni de forma corrent la nota individual de cada alumne es ponderarà de la següent forma:
 
-    -   10% Javadoc i Diagrames
+    - 80% Codi:
 
-    -   20% Autoavaluació
+    	-   50% Review del Codi
 
-    -   10% Junit
+    	-   50% Codi (Sense bugs, 1 client i servidor en els modes) + Junit + Memòria i diagrames.
+    
+    - 20% Peer Testing sessió de test
 
-    -   60% Codi (Sense bugs, 1 client i servidor en els modes)
 
 Batalla d'insults
 =================
@@ -197,15 +194,14 @@ tres assajos per demostrar-se digne de convertir-se en pirata.
 
 El jugador comença amb dos insults/rèpliques que ha après anteriorment i
 hi ha una llista de 16 (veure secció
-[\[sec:instults\]](#sec:instults){reference-type="ref"
-reference="sec:instults"}). Després d'aprendre al menys 4 parelles
+[\[sec:instults\]](#sec:instults)). Després d'aprendre al menys 4 parelles
 d'insults/rèpliques i guanyar al menys 3 duels (per guanyar un duel has
 de guanyar 2 vegades al pirata, bé insultant sense que aconsegueixi
 replicarte, o bé replicant correctament els seus insults). Quan això
 passi els teus enemics et diran que ets tan bo que podries lluitar amb
 la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 
-Insults {#sec:insults}
+Insults 
 =======
 
 Aquí teniu la llista d'insults estàndards del Carib.
@@ -276,56 +272,49 @@ Aquí teniu la llista d'insults estàndards del Carib.
 
 Missatges
 =========
-
 El client (c) i el servidor (s) suporta 7 tipus de missatges amb els
 següents codis d'operacions:
 
-  ---------- ---
-  HELLO      1
-  HASH       2
-  SECRET     3
-  INSULT     4
-  COMEBACK   5
-  SHOUT      6
-  ERROR      7
-  ---------- ---
+Message| Code
+-------|-------
+HELLO    |1
+HASH     |2
+SECRET   |3
+INSULT   |4
+COMEBACK |5
+SHOUT    |6
+ERROR    |7
 
+  
 -   La capçalera d'un missatge conté el codi d'operació associat amb
-    aquest paquet. Els paquets HELLO (codi d'operació 1) té el format
+    aquest paquet. Els paquets **HELLO** (codi d'operació 1) té el format
     que es mostra en la Figura 1, on *Name* és el nom del pirata.
 
-```{=html}
-<!-- -->
-```
+
                                  1 byte       string    1 byte     
                                 ------------------------------
                                 | Opcode |     Name    |  0  |
                                 ------------------------------
                                     Figura 1: Missatge HELLO
 
--   Els paquets HASH i SECRET (codi d'operacions 2 i 3 respectivament)
+-   Els paquets **HASH** i **SECRET** (codi d'operacions 2 i 3 respectivament)
     tenen el format que es mostra en la Figura 2, on *Hash* és el hash
     creat pel pirata i *Secret* és el secret fet servir pel pirata.
 
-```{=html}
-<!-- -->
-```
+
                                  1 byte       string      1 byte     
                                 ---------------------------------
                                 | Opcode |  Hash/Secret   |  0  |
                                 ---------------------------------
                                  Figura 2: Missatges HASH i SECRET
 
--   Els paquets INSULT i COMEBACK (codi d'operacions 4 i 5
+-   Els paquets **INSULT** i **COMEBACK** (codi d'operacions 4 i 5
     respectivament) tenen el format que es mostra en la Figura 3, on
     *Insult* és un insult devastador i *Comeback* és la rèplica a
     l'insult devastador. La llista dels possibles insults la podeu
-    trobar en la secció [11](#sec:insults){reference-type="ref"
-    reference="sec:insults"}.
+    trobar en la secció [11](#sec:insults).
 
-```{=html}
-<!-- -->
-```
+
                                  1 byte       string          1 byte     
                                 -------------------------------------
                                 | Opcode |  Insult/Comeback   |  0  |
@@ -337,9 +326,7 @@ següents codis d'operacions:
     *EndMessage/ErrorMessage* és el és el missatge final i
     *ErrorMessage* el missatge d'error.
 
-```{=html}
-<!-- -->
-```
+
                              1 byte              string           1 byte     
                             ---------------------------------------------
                             | Opcode |  EndMessage/ErrorMessage   |  0  |
