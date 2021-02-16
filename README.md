@@ -272,8 +272,6 @@ Aquí teniu la llista d'insults estàndards del Carib.
 
     **Rèplica**-- Espero que ya hayas aprendido a no tocarte la nariz.
 
-Implementació Client
-=========
 
 
 Missatges
@@ -457,6 +455,7 @@ missatge de tipus ERROR i la lluita s'acabarà:
  Versió 2 jugadors
 ==================
 
+A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors.
 
 
 
