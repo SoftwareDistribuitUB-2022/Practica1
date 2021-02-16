@@ -457,7 +457,6 @@ missatge de tipus ERROR i la lluita s'acabarà:
  Versió 2 jugadors
 ==================
 
-A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors.
 
 
 
