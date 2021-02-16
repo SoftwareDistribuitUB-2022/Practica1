@@ -309,7 +309,7 @@ ERROR    |7
     creat pel pirata. 
 
 
-                                 1 byte       64 bytes          
+                                 1 byte    32 bytes (256 bits)          
                                 ---------------------------
                                 | Opcode |      Hash      |
                                 ---------------------------
