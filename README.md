@@ -128,7 +128,8 @@ Execució
 
     -   1 s'executarà en mode automàtic prenent decisions.
 
--   Si no s'especifica, el mode per defecte és el manual.
+-   Si no s'especifica, el mode per defecte és el manual. A la versió de jugadors el servidor farà de proxy de comunicació entre els dos clients dels jugadors.
+
 
 Sortida demanada
 ================
@@ -452,7 +453,11 @@ missatge de tipus ERROR i la lluita s'acabarà:
     c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !`Hasta la vista!
     
  Versió 2 jugadors
-==================  
+==================
+
+A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors.
+
+
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
 
