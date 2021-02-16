@@ -293,7 +293,7 @@ ERROR    |7
   
 -   La capçalera d'un missatge conté el codi d'operació associat amb
     aquest paquet. Els paquets **HELLO** (codi d'operació 1) té el format
-    que es mostra en la Figura 1, on *Name* és el nom del pirata.
+    que es mostra en la Figura 1, on *Name* és el nom del pirata 
 
 
                                  1 byte       string    1 byte     
