@@ -116,7 +116,7 @@ Execució
 
 -   En el servidor s'especifica l'opció port (-p) on s'especificarà el
     port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
-    es jugarà en mode 1 player o mode 2 players
+    es jugarà en mode 1 player o mode 2 players. A la versió de dos jugadors el servidor farà de proxy de comunicació entre els dos clients dels jugadors ense intervenir.
 
 -   En el client s'especifica l'opció maquina servidora (-s) on
     s'especificarà la IP del servidor i l'opció port (-p) on
@@ -128,7 +128,7 @@ Execució
 
     -   1 s'executarà en mode automàtic prenent decisions.
 
--   Si no s'especifica, el mode per defecte és el manual. A la versió de jugadors el servidor farà de proxy de comunicació entre els dos clients dels jugadors.
+-   Si no s'especifica, el mode per defecte és el manual. 
 
 
 Sortida demanada
