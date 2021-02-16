@@ -336,7 +336,7 @@ ERROR    |7
                                 -------------------------------------
                                 | Opcode |  Insult/Comeback   |  0  |
                                 -------------------------------------
-                                 Figura 4: Missatges HASH i SECRET
+                                 Figura 4: Missatges INSULT i COMEBACK
 
 -   Els paquets **SHOUT** i **ERROR** (codi d'operacions 6 i 7 respectivament)
     tenen el format que es mostra en la Figura 5, on
