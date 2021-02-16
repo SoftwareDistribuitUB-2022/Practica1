@@ -291,10 +291,12 @@ COMEBACK |5
 SHOUT    |6
 ERROR    |7
 
-  
+- En les mides dels següents missages que es detallen a continuació els camps amb mida **string** representen cadenes de bytes codificats en Extended ASCII en format de xarxa (Big Endian). Així mateix, els camps amb mida d'un o diversos bytes, aquests **bytes** són bytes en format de xarxa (Big Endian).
+
 -   La capçalera d'un missatge conté el codi d'operació associat amb
     aquest paquet. Els paquets **HELLO** (codi d'operació 1) té el format
-    que es mostra en la Figura 1, on *Name* és el nom del pirata 
+    que es mostra en la Figura 1, on *Name* és el nom del pirata expressat
+    en. En les mides d'aquests camps string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) i byte és un byte en format de xarxa (Big Endian).
 
 
                                  1 byte       string    1 byte     
@@ -304,7 +306,7 @@ ERROR    |7
                                     Figura 1: Missatge HELLO
 
 -   Els paquet **HASH** (codi d'operació 2) té el format que es mostra en la Figura 2, on *Hash* és el hash
-    creat pel pirata.
+    creat pel pirata. 
 
 
                                  1 byte       64 bytes          
