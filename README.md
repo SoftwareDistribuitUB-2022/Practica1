@@ -193,7 +193,8 @@ estar preparat per derrotar la Sword Master de la illa Mêlée com un dels
 tres assajos per demostrar-se digne de convertir-se en pirata.
 
 El jugador comença amb dos insults/rèpliques que ha après anteriorment i
-hi ha una llista de 16 (veure secció següent). Després d'aprendre al menys 4 parelles d'insults/rèpliques i guanyar al menys 3 duels (per guanyar un duel has
+hi ha una llista de 16 (veure secció següent). Després d'aprendre al menys 4 
+parelles d'insults/rèpliques i guanyar al menys 3 duels (per guanyar un duel has
 de guanyar 2 vegades al pirata, bé insultant sense que aconsegueixi
 replicarte, o bé replicant correctament els seus insults). Quan això
 passi els teus enemics et diran que ets tan bo que podries lluitar amb
@@ -301,19 +302,28 @@ ERROR    |7
                                 ------------------------------
                                     Figura 1: Missatge HELLO
 
--   Els paquets **HASH** i **SECRET** (codi d'operacions 2 i 3 respectivament)
-    tenen el format que es mostra en la Figura 2, on *Hash* és el hash
-    creat pel pirata i *Secret* és el secret fet servir pel pirata.
+-   Els paquet **HASH** (codi d'operació 2) té el format que es mostra en la Figura 2, on *Hash* és el hash
+    creat pel pirata.
+
+
+                                 1 byte       64 bytes          
+                                ---------------------------
+                                | Opcode |      Hash      |
+                                ---------------------------
+                                 Figura 2: Missatge HASH
+                                 
+-   Els paquet **SECRET** (codi d'operació 3 ) tenen el format que es mostra en la Figura 3, on *Secret* 
+és el secret fet servir pel pirata.
 
 
                                  1 byte       string      1 byte     
                                 ---------------------------------
-                                | Opcode |  Hash/Secret   |  0  |
+                                | Opcode |    Secret      |  0  |
                                 ---------------------------------
-                                 Figura 2: Missatges HASH i SECRET
+                                 Figura 3: Missatge SECRET                                 
 
 -   Els paquets **INSULT** i **COMEBACK** (codi d'operacions 4 i 5
-    respectivament) tenen el format que es mostra en la Figura 3, on
+    respectivament) tenen el format que es mostra en la Figura 4, on
     *Insult* és un insult devastador i *Comeback* és la rèplica a
     l'insult devastador. La llista dels possibles insults la podeu
     trobar en la secció d'insults.
@@ -323,10 +333,10 @@ ERROR    |7
                                 -------------------------------------
                                 | Opcode |  Insult/Comeback   |  0  |
                                 -------------------------------------
-                                 Figura 3: Missatges HASH i SECRET
+                                 Figura 4: Missatges HASH i SECRET
 
 -   Els paquets SHOUT i ERROR (codi d'operacions 6 i 7 respectivament)
-    tenen el format que es mostra en la Figura 4, on
+    tenen el format que es mostra en la Figura 5, on
     *EndMessage/ErrorMessage* és el és el missatge final i
     *ErrorMessage* el missatge d'error.
 
@@ -335,7 +345,7 @@ ERROR    |7
                             ---------------------------------------------
                             | Opcode |  EndMessage/ErrorMessage   |  0  |
                             ---------------------------------------------
-                                 Figura 4: Missatges SHOUT i ERROR
+                                 Figura 5: Missatges SHOUT i ERROR
 
 Els possibles missatges d'error són:
 
