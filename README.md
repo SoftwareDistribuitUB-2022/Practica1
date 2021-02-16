@@ -5,7 +5,11 @@ date: Febrer 2021
 title: Pràctica 1 - Client Servidor (Software distribüit)
 ---
 
-![image](figures/sword.png)
+[![homepage][1]][2]
+
+[1]:  figures/sword.png
+[2]:  https://www.youtube.com/watch?v=s_bHFhs_65Q
+
 
 Objectiu
 ========
