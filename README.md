@@ -335,7 +335,7 @@ ERROR    |7
                                 -------------------------------------
                                  Figura 4: Missatges HASH i SECRET
 
--   Els paquets SHOUT i ERROR (codi d'operacions 6 i 7 respectivament)
+-   Els paquets **SHOUT** i **ERROR** (codi d'operacions 6 i 7 respectivament)
     tenen el format que es mostra en la Figura 5, on
     *EndMessage/ErrorMessage* és el és el missatge final i
     *ErrorMessage* el missatge d'error.
@@ -412,10 +412,32 @@ revelar els seus secrets:
 
 Si la suma dels seus secrets és parell comença el pirata client, en un
 altre cas, comença el pirata servidor. El client i el servidor comencen
-amb la batalla:
+amb la batalla. 
 
-    c/s: INSULT: Quería asegurarme de que estuvieras a gusto conmigo.
-    s/c: COMEBACK: ¡He oído que eres un soplón despreciable!
+Si el client comença insultant, el programa client mostra per pantalla 
+una llista numerada amb tots els insults que ha après, per exemple:
+
+    1) ¡Me das ganas de vomitar!
+    2) ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
+    
+L'usuari tria el nombre de l'insult i l'envia. El servidor contesta amb la rèplica:
+
+    c: INSULT: ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
+    s: COMEBACK: ¡He oído que eres un soplón despreciable!
+
+Si és el servidor qui comença insultant, el programa client rebrà l'insult:
+
+    s: INSULT: ¡Me das ganas de vomitar!
+
+i el programa client mostrarà per pantalla una llista numerada amb totes les rèpliques que ha après, per exemple:
+
+    1) ¿Incluso antes de que huelan tu aliento?
+    2) Estaría acabado si la usases alguna vez.
+    3) ¡He oído que eres un soplón despreciable!
+
+L'usuari triarà un nombre de la llista i s'enviarà la rèplica:
+
+    c: COMEBACK: Estaría acabado si la usases alguna vez.
 
 Qui mantingui el domini podrà llançar el següent insult. Com es deia
 anteriorment, dos insults amb èxit asseguraran la victòria dels
