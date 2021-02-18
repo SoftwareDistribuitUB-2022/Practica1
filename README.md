@@ -210,7 +210,7 @@ la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 Insults 
 =======
 
-Aquí teniu la llista d'insults estàndards del Carib.
+Aquí teniu la llista d'insults estàndards del Carib amb les seves corresponents rèpliques.
 
 -   **Insult**: ¿Has dejado ya de usar pañales?
 
