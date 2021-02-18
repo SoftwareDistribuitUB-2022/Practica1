@@ -450,6 +450,12 @@ combatents. La batalla acaba fent servir el missatge de tipus SHOUT:
 
     c: SHOUT ¡He ganado, Name2!
     s: SHOUT ¡Has ganado, Name1!
+    
+Si el jugador ha guanyat 3 duels l'adversari li dirà que és tan bo que podria lluitar amb
+la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
+
+    c: SHOUT ¡He ganado, Name2!
+    s: SHOUT ¡Has ganado, Name1. Ets tan bo que podria lluitar amb la Sword Master de la illa Mêlée!
 
 Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
