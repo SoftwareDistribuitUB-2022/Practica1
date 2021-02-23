@@ -5,6 +5,8 @@ date: Febrer 2021
 title: Pràctica 1 - Client Servidor (Software distribüit)
 ---
 
+**Recordeu que s'ha de fer el [desenvolupament de les pràctiques](Desenvolupament_de_les_practiques.md) mitjançant els Pull Requests!!!**
+
 [![homepage][1]][2]
 
 [1]:  figures/sword.png
