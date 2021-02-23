@@ -45,21 +45,15 @@ Tasques a realitzar
 
 Calendari
 =========
-
--   17/02/2021: a) Creació de grups. b) Preparació del GitHub. c)
-    Realiztizació de la prac0
-
--   24/02/2021 Disseny del sistema distribuït. Implementació Protocol.
-
--   03/03/2021 Implementació Client.
-
--   10/03/2021 Implementació Servidor amb Multithread 1 Player.
-
--   17/03/2021 Implementació Servidor amb Multithread 2 Players.
-
--   24/03/2021 Sessió de Test creuat. Tasca Taller
-
--   30/03/2021 Entrega codi, memòria i log execució al CV. Tasca Fitxer
+Data Sessió |Tasca | Data límit Peer Review| Puntuació del Review
+|---|---|---|---|
+|  17/02/2021| a) Creació de grups. b) Preparació del GitHub. c) Realiztizació de la prac0 | 24/02 | 1
+|24/02/2021| Disseny del sistema distribuït. Implementació Protocol.|03/03 |1
+|03/03/2021| Implementació Client. | 10/03 | 1
+|10/03/2021| Implementació Servidor amb Multithread 1 Player. |17/03 | 1
+|17/03/2021| Implementació Servidor amb Multithread 2 Players. |24/03| 1
+|24/03/2021| Sessió de Test creuat. Tasca Taller.  |30/03| 1     
+|30/03/2021| Entrega codi, memòria i log execució al CV. Tasca Fitxer
 
 
 Notes importants
@@ -113,12 +107,12 @@ Notes sobre el Disseny
 Execució
 ========
 
-    servidor> java Server -h 
-    Us: java Server -p <port> -m [1|2] 
+    servidor> java -jar server.jar -h 
+    Us: java -jar server.jar -p <port> -m [1|2] 
 
 
-    client> java Client -h
-    Us: java Client -s <maquina\_servidora> -p <port> [-i 0|1]
+    client> java -jar client -h
+    Us: java -jar client -s <maquina\_servidora> -p <port> [-i 0|1]
 
 -   En el servidor s'especifica l'opció port (-p) on s'especificarà el
     port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
