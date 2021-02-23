@@ -161,20 +161,20 @@ Entregues
 Avaluació
 =========
 
--   En cas de que el codi no compleixi les especificacions determinades
-    o no segueixi el protocol acordat, la pràctica estarà suspesa. Totes
-    les entregues s'executaran de forma automàtica contra els nostres
-    servidors i clients amb diferents jocs de proves escrits en JUnit.
-    Es recomana que feu els vostres propis JUnit per provar el vostre
+-   En cas de que el codi **no compleixi les especificacions determinades**
+    o **no segueixi el protocol acordat**, la pràctica estarà **SUSPESA**. 
+    Totes les entregues s'executaran de forma automàtica contra els nostres
+    servidors i clients amb diferents jocs de proves.
+    Es recomana que feu els vostres propis jocs de proves per a provar el vostre
     codi amb els demés en la sessió de test.
 
--   En cas de que la pràctica funcioni de forma corrent la nota individual de cada alumne es ponderarà de la següent forma:
+-   En cas de que la pràctica funcioni de forma correcta la **nota individual** de cada alumne es ponderarà de la següent forma:
 
     - 80% Codi:
 
     	-   50% Review del Codi
 
-    	-   50% Codi (Sense bugs, 1 client i servidor en els modes) + Junit + Memòria i diagrames.
+    	-   50% Codi (Sense bugs, 1 client i servidor en els modes) + Tests + Memòria i diagrames.
     
     - 20% Peer Testing sessió de test
 
