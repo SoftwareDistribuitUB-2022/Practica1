@@ -201,7 +201,7 @@ tres assajos per demostrar-se digne de convertir-se en pirata.
 
 El jugador comença amb dos insults/rèpliques que ha après anteriorment i
 hi ha una llista de 16 (veure secció següent). Després d'aprendre al menys 4 
-parelles d'insults/rèpliques i guanyar al menys 3 duels (per guanyar un duel has
+parelles d'insults/rèpliques i guanyar 3 duels (per guanyar un duel has
 de guanyar 2 vegades al pirata, bé insultant sense que aconsegueixi
 replicarte, o bé replicant correctament els seus insults). Quan això
 passi els teus enemics et diran que ets tan bo que podries lluitar amb
@@ -212,7 +212,7 @@ la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 Insults 
 =======
 
-Aquí teniu la llista d'insults estàndards del Carib.
+Aquí teniu la llista d'insults estàndards del Carib amb les seves corresponents rèpliques.
 
 -   **Insult**: ¿Has dejado ya de usar pañales?
 
@@ -452,6 +452,12 @@ combatents. La batalla acaba fent servir el missatge de tipus SHOUT:
 
     c: SHOUT ¡He ganado, Name2!
     s: SHOUT ¡Has ganado, Name1!
+    
+Si el jugador ha guanyat 3 duels l'adversari li dirà que és tan bo que podria lluitar amb
+la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
+
+    c: SHOUT ¡He ganado, Name2!
+    s: SHOUT ¡Has ganado, Name1. Ets tan bo que podria lluitar amb la Sword Master de la illa Mêlée!
 
 Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
