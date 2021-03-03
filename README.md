@@ -462,7 +462,7 @@ missatge de tipus ERROR i la lluita s'acabarà:
 ==================
 
 A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors.
-
+Per triar quins dels dos jugadors comença, cada jugador compara els dos hashos i començarà qui te el Hash més gran. 
 
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
