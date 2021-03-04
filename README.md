@@ -112,7 +112,7 @@ Execució
 
 
     client> java -jar client -h
-    Us: java -jar client -s <maquina\_servidora> -p <port>  -m <1|2> [-i 0|1]
+    Us: java -jar client -s <maquina\_servidora> -p <port>  [-i 0|1]
 
 -   En el servidor s'especifica l'opció port (-p) on s'especificarà el
     port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
@@ -120,7 +120,7 @@ Execució
 
 -   En el client s'especifica l'opció maquina servidora (-s) on
     s'especificarà la IP del servidor i l'opció port (-p) on
-    s'especificarà el port d'escolta del servidor i s'especifica l'opció mode (-m) on s'especificarà si es jugarà en mode 1 player o mode 2 players. .
+    s'especificarà el port d'escolta del servidor.
 
 -   Si en el client també s'especifica l'opció interactive (-i) igual a:
 
@@ -294,13 +294,13 @@ ERROR    |7
 -   La capçalera d'un missatge conté el codi d'operació associat amb
     aquest paquet. Els paquets **HELLO** (codi d'operació 1) té el format
     que es mostra en la Figura 1, on *Name* és el nom del pirata expressat
-    en. En les mides d'aquests camps string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) i byte és un byte en format de xarxa (Big Endian).
+    com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian))  i on *id* és un int32 bytes en format xarxa.
 
 
-                                 1 byte       string    1 byte     
-                                ------------------------------
-                                | Opcode |     Name    |  0  |
-                                ------------------------------
+                                 1 byte    int32   string   1 byte     
+                                ----------------------------------
+                                | Opcode |  id   | Name    |  0  |
+                                ----------------------------------
                                     Figura 1: Missatge HELLO
 
 -   Els paquet **HASH** (codi d'operació 2) té el format que es mostra en la Figura 2, on *Hash* és el hash
@@ -366,8 +366,8 @@ Carib està ple de monedes amb dues cares, per això, els pirates no
 confien en elles i prefereixen implementar protocols criptogràfics. Fa
 uns anys per triar qui comença a insultar cada pirata pensava en un
 secret i se'ls intercanviaven. Si la suma dels secrets era parell
-començava el pirata client, en un altre cas, començava el pirata
-servidor. És conegut a tot el Carib el *truco* del pirata Trump Oso pel
+començava el pirata amb el id de nom més petit, en un altre cas, començava el pirata
+amb el id de nom més gran. És conegut a tot el Carib el *truco* del pirata Trump Oso pel
 qual en rebre el secret del seu adversari triava un secret de tal manera
 que li permetès escollir qui començava. Per evitar aquest *truco* els
 pirates fan servir un protocol de *commitment* [^1]. En comptes de
@@ -387,17 +387,16 @@ poden revelar els seus secrets i posteriorment calcular la seva suma.
 Els pirates, per estar segurs que no han fet trampa calculen ells
 mateixos el hash del secret del seu adversari. Si coincideix amb el hash
 previament rebut ja poden calcular qui comença a insultar que es fa com
-abans: si la suma és parell comença el pirata client, en un altre cas,
-comença el pirata servidor.
+abans: si la suma és parell comença el pirata amb el id de nom més petit, en un altre cas, comença el pirata amb el id de nom més gran.
 
 Per començar els pirates es presenten fent servir el missatge de tipus
 HELLO amb el seu nom:
 
-    c: HELLO Name1 
+    c: HELLO id1 Name1 
 
 De la mateixa manera, el pirata servidor contestarà:
 
-    s: HELLO Name2
+    s: HELLO id2 Name2
 
 Els pirates client i servidor crearan un nombre secret (secret_c i
 Secret_s, respectivament) i s'intervanviaran els següents missatges:
@@ -456,13 +455,14 @@ la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
 
-    c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !`Hasta la vista!
+    c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !Hasta la vista!
     
  Versió 2 jugadors
 ==================
 
-A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors.
-Per triar quins dels dos jugadors comença, cada jugador compara els dos hashos i començarà qui te el Hash més gran. 
+A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error:
+
+  s: ERROR ¡No eres tu, soy yo! !Hasta la vista!
 
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
