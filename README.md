@@ -462,7 +462,7 @@ missatge de tipus ERROR i la lluita s'acabarà:
 
 A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error:
 
-  s: ERROR ¡No eres tu, soy yo! !Hasta la vista!
+  c: ERROR ¡No eres tu, soy yo! !Hasta la vista!
 
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
