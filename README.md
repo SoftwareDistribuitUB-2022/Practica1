@@ -108,11 +108,11 @@ Execució
 ========
 
     servidor> java -jar server.jar -h 
-    Us: java -jar server.jar -p <port> -m [1|2] 
+    Us: java -jar server.jar -p <port> -m <1|2> 
 
 
     client> java -jar client -h
-    Us: java -jar client -s <maquina\_servidora> -p <port> [-i 0|1]
+    Us: java -jar client -s <maquina\_servidora> -p <port>  -m <1|2> [-i 0|1]
 
 -   En el servidor s'especifica l'opció port (-p) on s'especificarà el
     port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
@@ -120,7 +120,7 @@ Execució
 
 -   En el client s'especifica l'opció maquina servidora (-s) on
     s'especificarà la IP del servidor i l'opció port (-p) on
-    s'especificarà el port d'escolta del servidor.
+    s'especificarà el port d'escolta del servidor i s'especifica l'opció mode (-m) on s'especificarà si es jugarà en mode 1 player o mode 2 players. .
 
 -   Si en el client també s'especifica l'opció interactive (-i) igual a:
 
