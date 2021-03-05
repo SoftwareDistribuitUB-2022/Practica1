@@ -446,6 +446,11 @@ combatents. La batalla acaba fent servir el missatge de tipus SHOUT:
     c: SHOUT ¡He ganado, Name2!
     s: SHOUT ¡Has ganado, Name1!
     
+Després es seguirà jugant un altra duel, començant per enviar un nou HASH d'un nou secret. 
+
+	c: HASH h(secret_c)
+  	s: HASH h(secret_s)
+    
 Si el jugador ha guanyat 3 duels l'adversari li dirà que és tan bo que podria lluitar amb
 la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
 
@@ -462,7 +467,7 @@ missatge de tipus ERROR i la lluita s'acabarà:
 
 A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error:
 
-  c: ERROR ¡No eres tu, soy yo! !Hasta la vista!
+  c: ERROR ¡No eres tú, soy yo! !Hasta la vista!
 
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
