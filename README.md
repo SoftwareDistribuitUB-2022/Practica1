@@ -193,11 +193,9 @@ mantingui el domini podrà llançar el següent insult. Dos insults amb
 estar preparat per derrotar la Sword Master de la illa Mêlée com un dels
 tres assajos per demostrar-se digne de convertir-se en pirata.
 
-El jugador comença amb dos insults/rèpliques que ha après anteriorment i
-hi ha una llista de 16 (veure secció següent). Després de guanyar 3 duels (per guanyar un duel has de guanyar 2 vegades al pirata, bé insultant sense que aconsegueixi
-replicarte, o bé replicant correctament els seus insults). Quan això
-passi els teus enemics et diran que ets tan bo que podries lluitar amb
-la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
+El jugador comença amb dos insults amb les seves rèpliques que ha après aleatòriament i hi ha una llista de 16 (veure secció següent). Després de guanyar **3 duels** (per guanyar un duel has de **vèncer 2 vegades** al pirata, bé insultant sense que aconsegueixi
+replicarte, o bé replicant correctament els seus insults), els teus enemics et diran que ets tan bo que podries lluitar amb
+la Sword Master de la illa Mêlée. **Aquí donem per acabat el joc.**
 
 
 
@@ -408,8 +406,7 @@ revelar els seus secrets:
     c: SECRET secret_c
     s: SECRET secret_s
 
-Si la suma dels seus secrets és parell comença el pirata client, en un
-altre cas, comença el pirata servidor. El client i el servidor comencen
+Si la suma dels seus secrets és parell comença el pirata amb el id de nom més petit, en un altre cas, comença el pirata amb el id de nom més gran. El client i el servidor comencen
 amb la batalla. 
 
 Si el client comença insultant, el programa client mostra per pantalla 
@@ -438,34 +435,126 @@ L'usuari triarà un nombre de la llista i s'enviarà la rèplica:
     c: COMEBACK: Estaría acabado si la usases alguna vez.
 
 Qui mantingui el domini podrà llançar el següent insult. Com es deia
-anteriorment, dos insults amb èxit asseguraran la victòria dels
-combatents. La batalla acaba fent servir el missatge de tipus SHOUT:
+anteriorment, **dos insults amb èxit** asseguraran la victòria dels
+combatents. El duel acaba fent servir el missatge de tipus SHOUT:
 
     c: SHOUT ¡He ganado, Name2!
     s: SHOUT ¡Has ganado, Name1!
     
-Després es seguirà jugant un altra duel, començant per enviar un nou HASH d'un nou secret. 
+Després es seguirà jugant un altra duel. Els pirates aprendran **un nou insult-replica aleatori** que no tinguin i enviaran un nou HASH d'un nou secret. 
 
 	c: HASH h(secret_c)
   	s: HASH h(secret_s)
     
 Si el jugador ha guanyat 3 duels l'adversari li dirà que és tan bo que podria lluitar amb
-la Sword Master de la illa Mêlée. Aquí donem per acabat el joc.
+la Sword Master de la illa Mêlée. Aquí donem per acabada la partida.
 
     c: SHOUT ¡He ganado, Name2!
-    s: SHOUT ¡Has ganado, Name1. Ets tan bo que podria lluitar amb la Sword Master de la illa Mêlée!
+    s: SHOUT ¡Has ganado, Name1. Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+
+Després d'acabar la partida, es pot començar una de nova fent **HELLO**. Sempre que s'usi el mateix ID i nom es podrà **mantenir els insults apresos fins ara i n'agafarà dos de nous que no tingui apresos**. En cas contari s'esborran els insults i se n'agafaran dos de nous.
+
+El Servidor sempre que comenci un partida nova amb **HELLO** serà un pirata nou i **esborrarà tots els insults i n'agafarà dos de nous.**
+
+Per deixar de jugar el client tallarà la connexió de socket amb el servidor. 
 
 Si ocorregués qualsevol problema al protocol els pirates faran servir el
 missatge de tipus ERROR i la lluita s'acabarà:
 
     c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !Hasta la vista!
     
+Exemple partida
+===============
+
+```
+C- HELLO 1234 Barbazul
+S- HELLO 9999 Jack Sparrow
+
+C- HASH AAAAAAAAAAAAAAAA #és fictici
+S- HASH BBBBBBBBBBBBBBBB #és fictici
+
+C- SECRET 1111
+S- SECRET 2222
+
+S- INSULT ¿Has dejado ya de usar pañales?  #Comença el Servidor pk la suma secret és imparell i el Servidor te el ID de nom més alt
+C- COMEBACK Qué apropiado, tú peleas como una vaca. #Punt per S insulta S
+
+S- INSULT  ¡No hay palabras para describir lo asqueroso que eres!
+C- COMEBACK Sí que las hay, sólo que nunca las has aprendido. # Punt per C insulta C
+
+C- INSULT ¡Una vez tuve un perro más listo que tu!
+S- COMEBACK Me alegra que asistieras a tu reunión familiar diaria. # Punt per C insulta C
+
+C- SHOUT ¡He ganado, Jack Sparrow! # 1-0
+S- SHOUT ¡Has ganado, Barbazul!
+
+C- HASH CCCCCCCCCCCCCCCC #és fictici #nou DUEL 
+S- HASH DDDDDDDDDDDDDDDD #és fictici
+
+C- SECRET 5555
+S- SECRET 1111
+
+C- INSULT ¿Has dejado ya de usar pañales? 
+S- COMEBACK ¿Por qué? ¿Acaso querías pedir uno prestado? #Punt per S insulta S
+
+S- INSULT ¡Una vez tuve un perro más listo que tu! 
+C- COMEBACK Te habrá enseñado todo lo que sabes. #Punt per C insulta C
+
+C- INSULT ¡Tienes los modales de un mendigo!
+S- COMEBACK Sí que las hay, sólo que nunca las has aprendido. #Punt per C insulta C
+
+C- SHOUT ¡He ganado, Jack Sparrow! # 2-0
+S- SHOUT ¡Has ganado, Barbazul!
+
+C- HASH .....
+......
+
+C- SHOUT ¡Has ganado, Jack Sparrow! # 2 -1
+S- SHOUT ¡He ganado, Barbazul!
+
+C- HASH ...
+.......
+
+C- SHOUT ¡Has ganado, Jack Sparrow! # 2 -2
+S- SHOUT ¡He ganado, Barbazul!
+
+C- HASH ...
+.......
+
+C- SHOUT ¡He ganado, Jack Sparrow! # 3-2
+S- SHOUT ¡Has ganado, Barbazul! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+
+C- HELLO 2138 Barbaroja
+S- HELLO 3323 Patapalo
+C- HASH ...
+.......
+
+C- SHOUT ¡Has ganado, Patapalo! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+S- SHOUT ¡He ganado, Barbazul! 
+
+C- HELLO 2138 Barbaroja
+S- HELLO 3122 Barbanegra
+C- HASH ...
+.......
+C- SHOUT ¡He ganado, Barbanegra! #
+S- SHOUT ¡Has ganado, Barbaroja! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+
+C- [conexion closed]
+S- [conexion closed]
+
+```
+
+
+
+
  Versió 2 jugadors
 ==================
 
-A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error:
+A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error i tancarà la connexió.
 
   c: ERROR ¡No eres tú, soy yo! !Hasta la vista!
+
+Si un dels dos jugadors talla la connexió durant la partida s'enviarà un error a l'altra jugador i s'acabarà la partida. 
 
 
 [^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
