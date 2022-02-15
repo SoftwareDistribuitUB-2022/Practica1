@@ -201,7 +201,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
  
 - El paquet **READY** (codi operació 2) té el format que es mostra en la Figura 2, on *id* és un int32 bytes en format xarxa. 
 
-    							 1 byte    int32       
+                                 1 byte    int32       
                                 ----------------------------------
                                 | Opcode |  SessionId    | 
                                 ----------------------------------
@@ -210,7 +210,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 
 - El paquet **PLAY** (codi operació 3) té el format que es mostra en la Figura 3, on *id* és un int32 bytes en format xarxa. 
    
-    							  1 byte    int32       
+                                  1 byte    int32       
                                 ----------------------------------
                                 | Opcode |  SessionId | 
                                 ----------------------------------
@@ -220,7 +220,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 
 - El paquet **ADMIT** (codi operació 4) té el format que es mostra en la Figura 4, on *bool* és un byte en format xarxa on 0 vol dir no admès i 1 vol dir admès. 
 
-    							  1 byte    1 byte       
+                                  1 byte    1 byte       
                                 ----------------------------------
                                 | Opcode |  bool    | 
                                 ----------------------------------
@@ -230,7 +230,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 - El paquet **WORD** (codi operació 5) té el format que es mostra en la Figura 5, on *Word* és una paraula com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) de longitud 5.
 
 
-								1 byte    5 byte       
+                                  1 byte    5 byte       
                                 ------------------------
                                 | Opcode |  Word    | 
                                 ------------------------
@@ -240,7 +240,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 - El paquet **RESULT** (codi operació 6) té el format que es mostra en la Figura 6, on *Result* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) de longitud 5.
 
 
-								   1 byte    5 byte       
+	                              1 byte    5 byte       
                                 ------------------------
                                 | Opcode |  Result    | 
                                 ------------------------
@@ -248,7 +248,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 - El paquet **STATS** (codi operació 7) té el format que es mostra en la Figura 7, on *JSON* és un JSON vàlid expresat com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
   
 
-								   1 byte   string   1 byte
+	                               1 byte   string   1 byte
                                 ---------------------------
                                 | Opcode |  JSON    | 0
                                 ----------------------------
@@ -279,7 +279,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 - El paquet **ERROR** (codi operació 8) té el format que es mostra en la Figura 8, on *ErrCode* és és un byte en format xarxa  i on *Msg* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
   
 
-								   1 byte    1 byte      string  1 byte
+								1 byte    1 byte      string  1 byte
                                 -------------------------------------
                                 | Opcode |  ErrCode    | Msg | 0
                                 -------------------------------------
