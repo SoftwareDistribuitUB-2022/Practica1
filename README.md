@@ -1,24 +1,18 @@
 ---
 author:
-- Irene Pérez, Carlos Borrego, Eloi Puertas
-date: Febrer 2021
+- Blai Ras, David Martinez Carpena, Eloi Puertas Prats
+date: Febrer 2022
 title: Pràctica 1 - Client Servidor (Software distribüit)
 ---
 
 **Recordeu que s'ha de fer el [desenvolupament de les pràctiques](Desenvolupament_de_les_practiques.md) mitjançant els Pull Requests!!!**
 
-[![homepage][1]][2]
-
-[1]:  figures/sword.png
-[2]:  https://www.youtube.com/watch?v=s_bHFhs_65Q
 
 
 Objectiu
 ========
 
-L'objectiu docent de la pràctica és aprendre a utilitzar els mecanismes
-de programació Client/Servidor en JAVA. Concretament és necessari que
-aprengueu com programar amb:
+L'objectiu docent de la pràctica és aprendre a utilitzar els mecanismes de programació Client/Servidor en JAVA. Concretament és necessari que aprengueu com programar amb:
 
 -   Sockets amb JAVA (utilitzant l'API Socket de Java.net)
 
@@ -30,10 +24,8 @@ Tasques a realitzar
 -   El client ha de tenir un mode manual (menú per pantalla) i un mode
     automàtic (juga automàticament segons els paràmetres introduïts)
 
--   S'ha de fer una implementació del servidor multi-thread que tant
-    serveixi per a que el jugador jugui contra la *màquina* (1 player)
-     com per a que jugui contra un altre
-    client connectat (2 player)
+-   S'ha de fer una implementació del servidor multi-thread que
+    serveixi per a que la *màquina* pugui jugar múltiples partides simultànees. 
 
 -   El servidor ha d'escriure un log de l'interacció amb el client a
     fitxer seguint el format especificat.
@@ -45,15 +37,15 @@ Tasques a realitzar
 
 Calendari
 =========
-Data Sessió |Tasca | Data límit Peer Review| Puntuació del Review
+Data Sessió |Planificació orientativa | Data límit Peer Review| Puntuació del Review
 |---|---|---|---|
-|  17/02/2021| a) Creació de grups. b) Preparació del GitHub. c) Realiztizació de la prac0 | 24/02 | 1
-|24/02/2021| Disseny del sistema distribuït. Implementació Protocol.|03/03 |1
-|03/03/2021| Implementació Client. | 10/03 | 1
-|10/03/2021| Implementació Servidor amb Multithread 1 Player. |17/03 | 1
-|17/03/2021| Implementació Servidor amb Multithread 2 Players. |24/03| 1
-|24/03/2021| Sessió de Test creuat. Tasca Taller.  |30/03| 1     
-|30/03/2021| Entrega codi, memòria i log execució al CV. Tasca Fitxer
+|  16/02/2022| a) Creació de grups. b) Preparació del GitHub. c) Realiztizació de la prac0 | - | 0
+|23/02/2022| Disseny del sistema distribuït. Implementació Protocol.|02-03/03 |1
+|02/03/2022| Implementació Client. | 09-10/03 | 1
+|09/03/2022| Implementació Servidor.  |16-17/03 | 1
+|16/03/2022| Implementació Servidor amb Multithread  |23-24/03| 1
+|23/03/2022| Sessió de Test creuat. Tasca Taller.  |- | 0    
+|29/03/2022| Entrega codi, memòria i log execució al CV. Tasca Fitxer
 
 
 Notes importants
@@ -62,80 +54,68 @@ Notes importants
 -   No es demana que s'implementi cap interfície gràfica.
 
 -   En mode manual l'usuari ha de poder jugar tantes partides com
-    vulgui. Haurà d'introduir el seu Identificador de jugador i a
-    continuació podrà fer tantes partides com vulgui o pugui. 
+    vulgui. 
 
 -   S'haurà de poder sortir en qualsevol moment de la partida, tallant
     la comunicació amb el servidor. 
+-  Es podrà fer el Peer Review fins al final de la sessió de pràctiques marcada en el Data límit Peer Eeview
     
--   En cada sessió de pràctiques es comprovarà si s'ha arribat a
-    l'objectiu fixat en el calendari per la sessió anterior. Feu un bon
-    ús de la programació Orientada a Objectes i de la metodologia
-    Test-Driven Development. Es penalitzarà si no es fa un bon ús
-    d'interfícies JAVA, separació de responsabilitats i creació de
-    tests.
+-   Feu un bon ús de la programació Orientada a Objectes i de la metodologia Test-Driven Development. Es penalitzarà si no es fa un bon ús d'interfícies JAVA, separació de responsabilitats i creació de tests.
 
 Notes sobre el Disseny
 ======================
 
--   Recordeu que s'han de dissenyar dues aplicacions, Client i Servidor.
-    Poden tenir classes en comú, per exemple ComUtils.
+-   Recordeu que s'han de dissenyar dues aplicacions, **Client** i **Servidor**. Poden tenir classes en comú, per exemple *ComUtils*.
 
--   La classe ComUtils l'heu d'extendre amb els vostres mètodes per a
-    seguir fil per randa el protocol. Si hi ha mètodes que no els
-    necessiteu, els podeu esborrar.
+-   La classe *ComUtils* l'heu d'extendre amb els **vostres mètodes** per a seguir **fil per randa** el protocol. Si hi ha mètodes que no els necessiteu, els podeu esborrar.
 
 -   No podeu usar classes de Java per a serialitzar els vostres
-    objectes, ja que no seguiran el protocol demanat. Useu les
-    primitives del ComUtils sempre.
+    objectes, ja que no seguiran el protocol demanat. **Useu les
+    primitives del ComUtils sempre**.
 
--   Feu servir JUnit per comprovar el protocol, per exemple, si s'ha
+-   **Feu servir JUnit** per comprovar el protocol, per exemple, si s'ha
     enviat una comanda, espero rebre'n unes de determinades. Penseu que
     sempre podríeu rebre un missatge d'error.
 
 -   Per a guardar les comandes d'entrada és una bona pràctica usar un
-    HashMap per cada opció entrada i el seu valor i consultar el seu
-    valor quan sigui necessari.
+    HashMap per cada opció entrada amb el seu valor i consultar aquest diccionari quan sigui necessari.
 
--   El Client en mode automàtic ha de prendre les decisions més adients
-    per guanyar la partida.
+-   El Client en mode automàtic pot jugar de forma totalment aleatòria, però podeu fer servir alogorismes una mica més intel·ligents si voleu.
 
--   Feu servir dues implementacions diferents del thread de control de
-    la partida del Servidor pel cas 1 player i 2 player. En l'execució
-    s'especificarà el mode de joc del Servidor.
 
 Execució
 ========
 
-    servidor> java -jar server.jar -h 
-    Us: java -jar server.jar -p <port> -m <1|2> 
-
-
-    client> java -jar client -h
-    Us: java -jar client -s <maquina\_servidora> -p <port>  [-i 0|1]
+La execució s'ha de fer des de mode consola obligatòriament. El nom del jar de servidor ha de ser server.jar i el de client client.jar. L'execució es farà amb aquests paràmetres:
 
 -   En el servidor s'especifica l'opció port (-p) on s'especificarà el
-    port d'escolta i s'especifica l'opció mode (-m) on s'especificarà si
-    es jugarà en mode 1 player o mode 2 players. A la versió de dos jugadors el servidor farà de proxy de comunicació entre els dos clients dels jugadors ense intervenir.
+    port d'escolta.
 
 -   En el client s'especifica l'opció maquina servidora (-s) on
     s'especificarà la IP del servidor i l'opció port (-p) on
-    s'especificarà el port d'escolta del servidor.
-
--   Si en el client també s'especifica l'opció interactive (-i) igual a:
+    s'especificarà el port d'escolta del servidor. També es pot especificar l'opció interactive (-i) igual a:
 
     -   0 vol dir que el joc s'executa en mode manual.
 
     -   1 s'executarà en mode automàtic prenent decisions.
 
--   Si no s'especifica, el mode per defecte és el manual. 
+-   Si no s'especifica l'opció -i, el mode per defecte és el manual. 
+- L'opció -h mosta l'ajuda dús de les aplicacions:
+
+```
+    servidor> java -jar server.jar -h 
+    Us: java -jar server.jar -p <port> 
+```
+```
+    client> java -jar client.jar -h
+    Us: java -jar client -s <maquina_servidora> -p <port>  [-i 0|1]
+```
 
 
 Sortida demanada
 ================
 
--   El fitxer de log ha de ser la versió textual del que s'està enviant
-    pel socket.
+-   El fitxer de log ha de ser la versió textual del que s'està enviant pel socket.
 
 -   Només cal guardar el fitxer de log del Servidor. Heu de guardar
     només el contingut de la comunicació per socket, tant del que es rep
@@ -146,8 +126,8 @@ Sortida demanada
 
 -   \"Server\"+Thread.currentThread().getName()+\".log\"
 
--   Sobretot feu una carpeta src per cada aplicació on les classes
-    principals es diguin Clienti Server respectivament.
+-   **Sobretot** feu una carpeta src per cada aplicació on les classes
+    principals es diguin *Client.java* i *Server.java *respectivament.
 
 Entregues
 =========
@@ -156,408 +136,312 @@ Entregues
 -   Sessió de Test obligatòria (Mínim un component de la
     parella).
 
--   A CampusVirtual: 30/03/2021 23.55h.
+-   A CampusVirtual: 29/03/2022 23.59h.
 
 Avaluació
 =========
 
 -   En cas de que el codi **no compleixi les especificacions determinades**
-    o **no segueixi el protocol acordat**, la pràctica estarà **SUSPESA**. 
-    Totes les entregues s'executaran de forma automàtica contra els nostres
+    o **no segueixi estíctament el protocol acordat**, la pràctica estarà **SUSPESA**. Per tal d'evitar aquesta circumstància es demanarà fer un Test creuat per a que comproveu la validesa de la vostra solució. 
+     
+-    Totes les entregues s'executaran de forma automàtica contra els nostres
     servidors i clients amb diferents jocs de proves.
-    Es recomana que feu els vostres propis jocs de proves per a provar el vostre
+    
+-    Es recomana que feu els vostres propis jocs de proves per a provar el vostre
     codi amb els demés en la sessió de test.
 
 -   En cas de que la pràctica funcioni de forma correcta la **nota individual** de cada alumne es ponderarà de la següent forma:
 
     - 80% Codi:
 
-    	-   50% Review del Codi
+    	-   50% Review del Codi que s'ha fet al company
 
-    	-   50% Codi (Sense bugs, 1 client i servidor en els modes) + Tests + Memòria i diagrames.
+    	-   50% Codi (Sense bugs, Codi elegant) + Tests + Memòria i diagrames.
     
     - 20% Peer Testing sessió de test
 
 
-Batalla d'insults
+WORDLE
 =================
 
-La batalla d'insults d'espasa és una activitat que tot pirata ha de
-dominar. A tot el Carib, molts pirates fan servir insults estàndards.
-Durant les baralles un pirata llançarà un insult com ara *\"¿Has dejado
-ya de usar pañales?\"*. L'adversari es veurà obligat a respondre amb una
-resposta enginyosa, per exemple *\"¿Por qué? ¿Acaso querías pedir uno
-prestado?\"*. Si la resposta és prou insultant guanyarà la baralla. Qui
-mantingui el domini podrà llançar el següent insult. Dos insults amb
-èxit asseguraran la victòria dels combatents. L'objectiu del jugador és
-estar preparat per derrotar la Sword Master de la illa Mêlée com un dels
-tres assajos per demostrar-se digne de convertir-se en pirata.
+El Wordle és un joc de paraules en línia gratuït inventat l'any 2021 per Josh Wardle. Gràcies a la seva popularitat a Twitter, el joc va tenir un èxit immediat en la seva versió en anglès. Ràpidament es va oferir en altres idiomes i es va imitar en altres versions.
 
-El jugador comença amb dos insults amb les seves rèpliques que ha après aleatòriament i hi ha una llista de 16 (veure secció següent). Després de guanyar **3 duels** (per guanyar un duel has de **vèncer 2 vegades** al pirata, bé insultant sense que aconsegueixi
-replicarte, o bé replicant correctament els seus insults), els teus enemics et diran que ets tan bo que podries lluitar amb
-la Sword Master de la illa Mêlée. **Aquí donem per acabat el joc.**
+L'objectiu del joc és endevinar una paraula concreta de cinc lletres en un màxim de sis intents, escrivint lletres en una pantalla de sis línies de cinc caselles cadascuna. El jugador escriu a la primera línia una paraula de cinc lletres de la seva elecció i introdueix la seva proposta. Després de cada proposició, les lletres apareixen en color: el fons gris representa les lletres que no estan a la paraula cercada, el fons groc representa les lletres que es troben en altres llocs de la paraula i el fons verd representa les lletres que estan al lloc correcte en la paraula a trobar.[[https://ca.wikipedia.org/wiki/Wordle]](https://ca.wikipedia.org/wiki/Wordle).
 
-
-
-Insults 
-=======
-
-Aquí teniu la llista d'insults estàndards del Carib amb les seves corresponents rèpliques.
-
--   **Insult**: ¿Has dejado ya de usar pañales?
-
-    **Rèplica**: ¿Por qué? ¿Acaso querías pedir uno prestado?
-
--   **Insult**: ¡No hay palabras para describir lo asqueroso que eres!
-
-    **Rèplica**: Sí que las hay, sólo que nunca las has aprendido.
-
--   **Insult**: ¡He hablado con simios más educados que tu!
-
-    **Rèplica**-- Me alegra que asistieras a tu reunión familiar diaria.
-
--   **Insult** : ¡Llevarás mi espada como si fueras un pincho moruno!
-
-    **Rèplica**: Primero deberías dejar de usarla como un plumero.
-
--   **Insult**: ¡Luchas como un ganadero!
-
-    **Rèplica**: Qué apropiado, tú peleas como una vaca.
-
--   **Insult**: ¡No pienso aguantar tu insolencia aquí sentado!
-
-    **Rèplica**-- Ya te están fastidiando otra vez las almorranas, ¿Eh?
-
--   **Insult**: ¡Mi pañuelo limpiará tu sangre!
-
-    **Rèplica**-- Ah, ¿Ya has obtenido ese trabajo de barrendero?
-
--   **Insult**: ¡Ha llegado tu HORA, palurdo de ocho patas!
-
-    **Rèplica** Y yo tengo un SALUDO para ti, ¿Te enteras?
-
--   **Insult**: ¡Una vez tuve un perro más listo que tu!
-
-    **Rèplica**-- Te habrá enseñado todo lo que sabes.
-
--   **Insult**: ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
-
-    **Rèplica**-- ¿TAN rápido corres?
-
--   **Insult**: ¡Me das ganas de vomitar!
-
-    **Rèplica**-- Me haces pensar que alguien ya lo ha hecho.
-
--   **Insult**: ¡Tienes los modales de un mendigo!
-
-    **Rèplica**-- Quería asegurarme de que estuvieras a gusto conmigo.
-
--   **Insult**: ¡He oído que eres un soplón despreciable!
-
-    **Rèplica**-- Qué pena me da que nadie haya oído hablar de ti
-
--   **Insult**: ¡La gente cae a mis pies al verme llegar!
-
-    **Rèplica**-- ¿Incluso antes de que huelan tu aliento?
-
--   **Insult**: ¡Demasiado bobo para mi nivel de inteligencia!
-
-    **Rèplica**-- Estaría acabado si la usases alguna vez.
-
--   **Insult**: Obtuve esta cicatriz en una batalla a muerte!
-
-    **Rèplica**-- Espero que ya hayas aprendido a no tocarte la nariz.
-
-
+Aquest joc és una adaptació del famós joc Mastermind [[https://ca.wikipedia.org/wiki/Mastermind]](https://ca.wikipedia.org/wiki/Mastermind), on en comptes de fer servir codis numèrics es fan servir paraules vàlides d'un diccionari. 
 
 Missatges
 =========
-El client (c) i el servidor (s) suporta 7 tipus de missatges amb els
+El client (c) i el servidor (s) suporta  tipus de missatges amb els
 següents codis d'operacions:
 
-Message| Code
--------|-------
-HELLO    |1
-HASH     |2
-SECRET   |3
-INSULT   |4
-COMEBACK |5
-SHOUT    |6
-ERROR    |7
-
-- En les mides dels següents missages que es detallen a continuació els camps amb mida **string** representen cadenes de bytes codificats en Extended ASCII en format de xarxa (Big Endian). Així mateix, els camps amb mida d'un o diversos bytes, aquests **bytes** són bytes en format de xarxa (Big Endian).
-
--   La capçalera d'un missatge conté el codi d'operació associat amb
-    aquest paquet. Els paquets **HELLO** (codi d'operació 1) té el format
-    que es mostra en la Figura 1, on *Name* és el nom del pirata expressat
-    com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian))  i on *id* és un int32 bytes en format xarxa.
+Message| Code | Direcció
+-------|-------|--------
+HELLO    |1| C-S
+READY    |2| S-C
+PLAY     |3| C-S
+ADMIT    |4| S-C
+WORD     |5| C-S
+RESULT   |6| S-C
+STATS    |7| S-C
+ERROR    |8| S-C
 
 
-                                 1 byte    int32   string   1 byte     
-                                ----------------------------------
-                                | Opcode |  id   | Name    |  0  |
-                                ----------------------------------
+La capçalera d'un missatge conté el codi d'operació associat amb
+aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que es detallen a continuació els camps de tipus **string** representen cadenes de bytes codificats en Extended ASCII en format de xarxa (Big Endian). Així mateix, els camps amb tipus d'un o diversos bytes, aquests **bytes** són bytes en format de xarxa (Big Endian). 
+
+-   El paquet **HELLO** (codi d'operació 1) té el format que es mostra en la Figura 1, on *id* és un int32 bytes en format xarxa i on *Name* és el nom del jugador com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
+
+                                 1 byte       int32         string   1 byte     
+                                -------------------------------------------
+                                | Opcode |    SessionId  |  Name    |  0  |
+                                -------------------------------------------
                                     Figura 1: Missatge HELLO
 
--   Els paquet **HASH** (codi d'operació 2) té el format que es mostra en la Figura 2, on *Hash* és el hash
-    creat pel pirata. 
+ 
+- El paquet **READY** (codi operació 2) té el format que es mostra en la Figura 2, on *id* és un int32 bytes en format xarxa. 
+
+    							 1 byte    int32       
+                                ----------------------------------
+                                | Opcode |  SessionId    | 
+                                ----------------------------------
+       
+                                    Figura 2: Missatge READY
+
+- El paquet **PLAY** (codi operació 3) té el format que es mostra en la Figura 3, on *id* és un int32 bytes en format xarxa. 
+   
+    							  1 byte    int32       
+                                ----------------------------------
+                                | Opcode |  SessionId | 
+                                ----------------------------------
+                                    Figura 3: Missatge PLAY
 
 
-                                 1 byte    32 bytes (256 bits)          
+
+- El paquet **ADMIT** (codi operació 4) té el format que es mostra en la Figura 4, on *bool* és un byte en format xarxa on 0 vol dir no admès i 1 vol dir admès. 
+
+    							  1 byte    1 byte       
+                                ----------------------------------
+                                | Opcode |  bool    | 
+                                ----------------------------------
+                                    Figura 4: Missatge ADMIT
+
+
+- El paquet **WORD** (codi operació 5) té el format que es mostra en la Figura 5, on *Word* és una paraula com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) de longitud 5.
+
+
+								1 byte    5 byte       
+                                ------------------------
+                                | Opcode |  Word    | 
+                                ------------------------
+                                    Figura 5: Missatge WORD
+
+
+- El paquet **RESULT** (codi operació 6) té el format que es mostra en la Figura 6, on *Result* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) de longitud 5.
+
+
+								   1 byte    5 byte       
+                                ------------------------
+                                | Opcode |  Result    | 
+                                ------------------------
+                                    Figura 6: Missatge RESULT
+- El paquet **STATS** (codi operació 7) té el format que es mostra en la Figura 7, on *JSON* és un JSON vàlid expresat com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
+  
+
+								   1 byte   string   1 byte
                                 ---------------------------
-                                | Opcode |      Hash      |
-                                ---------------------------
-                                 Figura 2: Missatge HASH
-                                 
--   Els paquet **SECRET** (codi d'operació 3 ) tenen el format que es mostra en la Figura 3, on *Secret* 
-és el secret fet servir pel pirata.
+                                | Opcode |  JSON    | 0
+                                ----------------------------
+                                    Figura 7: Missatge STATS
 
+	Format del JSON Stats expresat com a string:
 
-                                 1 byte       string      1 byte     
-                                ---------------------------------
-                                | Opcode |    Secret      |  0  |
-                                ---------------------------------
-                                 Figura 3: Missatge SECRET                                 
+	```
+{
+  "Stats": {
+    "Jugades": 1,
+    "Èxits %": 100,
+    "Ratxa Actual": 1,
+    "Ratxa Màxima": 1,
+    "Victòries":
+      {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+  }
+}
+```
 
--   Els paquets **INSULT** i **COMEBACK** (codi d'operacions 4 i 5
-    respectivament) tenen el format que es mostra en la Figura 4, on
-    *Insult* és un insult devastador i *Comeback* és la rèplica a
-    l'insult devastador. La llista dels possibles insults la podeu
-    trobar en la secció d'insults.
+- El paquet **ERROR** (codi operació 8) té el format que es mostra en la Figura 8, on *ErrCode* és és un byte en format xarxa  i on *Msg* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
+  
 
-
-                                 1 byte       string          1 byte     
+								   1 byte    1 byte      string  1 byte
                                 -------------------------------------
-                                | Opcode |  Insult/Comeback   |  0  |
+                                | Opcode |  ErrCode    | Msg | 0
                                 -------------------------------------
-                                 Figura 4: Missatges INSULT i COMEBACK
-
--   Els paquets **SHOUT** i **ERROR** (codi d'operacions 6 i 7 respectivament)
-    tenen el format que es mostra en la Figura 5, on
-    *EndMessage/ErrorMessage* és el és el missatge final i
-    *ErrorMessage* el missatge d'error.
+                                    Figura 8: Missatge ERROR
 
 
-                             1 byte              string           1 byte     
-                            ---------------------------------------------
-                            | Opcode |  EndMessage/ErrorMessage   |  0  |
-                            ---------------------------------------------
-                                 Figura 5: Missatges SHOUT i ERROR
 
+                 
 Els possibles missatges d'error són:
 
--   ¡ Código de operación inválido, marinero de agua dulce! ¡Hasta la
-    vista!
-
--   ¡Mensaje incompleto, grumete! ¡Hasta la vista!
-
--   ¡Me he candado de esperar tus mensajes, mequetrefe! ¡Hasta la
-    vista!
+- ERRCODE: 1, MSG: CARÀCTER NO RECONEGUT
+- ERRCODE: 2, MSG: MISSATGE DESCONEGUT
+- ERRCODE: 3, MSG: MISSATGE FORA DE PROTOCOL
+- ERRCODE: 4, MSG: INICI DE SESSIÓ INCORRECTE
+- ERRCODE: 5, MSG: PARAULA DESCONEGUDA
+- ERRCODE: 6, MSG: MISSATGE MAL FORMAT
+- ERRCODE: 99, MSG: ERROR DESCONEGUT
 
 Protocol
 ========
+La partida la inicia el client amb una comanda **HELLO**. Si es vol continuar una sessió anterior es posa l'int32 associat a la sessió anterior i el nom del jugador que havia usat. En cas que es vulgui començar una sessió nova és passarà l'ID de sessió igual a 0 i el nom del jugador
 
-El pirates comencen triant de manera segura qui comença a insultar. El
-Carib està ple de monedes amb dues cares, per això, els pirates no
-confien en elles i prefereixen implementar protocols criptogràfics. Fa
-uns anys per triar qui comença a insultar cada pirata pensava en un
-secret i se'ls intercanviaven. Si la suma dels secrets era parell
-començava el pirata amb el id de nom més petit, en un altre cas, començava el pirata
-amb el id de nom més gran. És conegut a tot el Carib el *truco* del pirata Trump Oso pel
-qual en rebre el secret del seu adversari triava un secret de tal manera
-que li permetès escollir qui començava. Per evitar aquest *truco* els
-pirates fan servir un protocol de *commitment* [^1]. En comptes de
-enviar directament els seus secrets, els pirates envien abans, com a
-compromís, un hash del seu secret de tal manera que no es pugui fer el
-*truco* del pirata Trump Oso.
+C -----HELLO (SessionID, name)-----> S
 
-Les funcions hash són funcions matemàtiques que assignen a qualsevol
-entrada de qualsevol mida una cadena de bits de mida constant. Al Carib
-es fa servir *SHA-256* de 256 bits[^2]. Aquestes funcions són
-unidireccionals d'un sol sentit, es a dir, aplicant la funció hash a una
-entrada qualsevol obtindrem sempre la mateixa sortida, però donada
-aquesta sortida no podrem obtenir l'entrada corresponent.
+A continuació el servidor contesta amb un **READY**, passant un ID de sessió creat de nou si és una sessió nova. En cas de continuar una sessió es comprovarà que el nom i la sessió s'aparellin correctament i es tornarà a enviar el mateix ID de sessió. En cas contrari s'enviarà un **ERROR** d'*Inici de Sessió Incorrecte*.  
 
-Una vegada rebut el hash del secret del seu adversari, els pirates ja
-poden revelar els seus secrets i posteriorment calcular la seva suma.
-Els pirates, per estar segurs que no han fet trampa calculen ells
-mateixos el hash del secret del seu adversari. Si coincideix amb el hash
-previament rebut ja poden calcular qui comença a insultar que es fa com
-abans: si la suma és parell comença el pirata amb el id de nom més petit, en un altre cas, comença el pirata amb el id de nom més gran.
+C <------READY (SessionID) --------- S
 
-Per començar els pirates es presenten fent servir el missatge de tipus
-HELLO amb el seu nom:
+A continuació el client pot començar la partida amb un **PLAY**, passant l'ID de sessió rebut anteriorment. 
 
-    c: HELLO id1 Name1 
+C -----PLAY (SessionID)-----> S
 
-De la mateixa manera, el pirata servidor contestarà:
+El Servidor comprovarà que aquest SessionID sigui el mateix que es va enviar anteriorment i contestarà amb un **ADMIT** juntament amb un 1 si és correcte o amb un 0 si no ho és. El servidor triarà una paraula vàlida de 5 lletres aleatòria en català. Per fer això podeu usar el següent [diccionari](DISC2-LP-WORDLE.txt) català del Scrable amb totes les paraules de 5 lletres. El caràcter del punt volat ha estat eliminat, per tant les paraules amb ela geminada s'escriuen igual que amb ella. La paraula serà diferent per cada partida i client connectat.
+ 
+C <------ADMIT (bool) --------- S
 
-    s: HELLO id2 Name2
+A continuació el Client enviarà la primera **WORD**, que serà una paraula formada per 5 lletres i en català.
 
-Els pirates client i servidor crearan un nombre secret (secret_c i
-Secret_s, respectivament) i s'intervanviaran els següents missatges:
+C -----WORD (Word)-----> S
 
-    c: HASH h(secret_c)
-    s: HASH h(secret_s)
+El Servidor comprovarà que la paraula rebuda sigui vàlida.  En cas que la paraula no existeixi es retornarà un **ERROR** de *Paraula Desconeguda*. En cas contrari, s'enviarà un **RESULT** amb un codi de 5 caràcters on **\*** significa que la lletra no es troba en la paraula, **?** que significa que la lletra es troba en la paraula però no en la posició indicada i **^** signifca que la lletra es troba en la posició correcte. En cas que hi hagin lletres repetides en la paraula enviada i només una estigui en la paraual solució però en diferent posició, s'enviarà un ? en qualsevol de les dues posicions i en l'altra es posarà un \*, volent dir que només hi ha una instància d'aquella lletra però en una posició diferent d'on es troben en la paraula enviada. Per exemple: si la paraula enviada pel client era *CALAR* el resultat \*?\*\*^ significa que la C, una A i L no estan a la paraula del servidor, La R està bé i una A està en la paraula però no en cap de les posicions on hi ha A. 
 
-Una vegada els dos hashos hagin sigut compartits els pirates poden
-revelar els seus secrets:
+C <------ RESULT (Result) --------- S
 
-    c: SECRET secret_c
-    s: SECRET secret_s
-
-Si la suma dels seus secrets és parell comença el pirata amb el id de nom més petit, en un altre cas, comença el pirata amb el id de nom més gran. El client i el servidor comencen
-amb la batalla. 
-
-Si el client comença insultant, el programa client mostra per pantalla 
-una llista numerada amb tots els insults que ha après, per exemple:
-
-    1) ¡Me das ganas de vomitar!
-    2) ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
+A partir d'aquí el client podrà anar enviant WORDs fins a que encerti la paraula o arribi al 6è intent. 
     
-L'usuari tria el nombre de l'insult i l'envia. El servidor contesta amb la rèplica:
+Quan el client encerti la paraula, el servidor enviarà després del **RESULT ^^^^^** un  **STATS**. Si és el 6è intent i el client encara no ha encertat la paraula, el servidor enviarà el darrer **RESULT** seguit del **WORD** amb la paraula correcta i després els **STATS** actualitzats.
 
-    c: INSULT: ¡Nadie me ha sacado sangre jamás, y nadie lo hará!
-    s: COMEBACK: ¡He oído que eres un soplón despreciable!
+A Stats es va guardant les estadístiques sobre les partides del jugador durant la sessió actual. El format de les estadístiques és un JSON vàlid, on els camps tenen el següent signficat:
 
-Si és el servidor qui comença insultant, el programa client rebrà l'insult:
+- Jugades: Nombre de partides fetes en la sessió actual.
+- Èxits %: Tan per cent de partides guanyades en la sessió actual.
+- Ratxa Actual: Quantes partides guanyades consecutives es porten.
+- Ratxa Màxima: Nombre màxim de partides guanyades consecutives.
+- Victòries: Quantes partides s'han guanyat amb 1, 2, 3, 4, 5 i 6 intents.
 
-    s: INSULT: ¡Me das ganas de vomitar!
+```
+{
+  "Stats": {
+    "Jugades": 1,
+    "Èxits %": 100,
+    "Ratxa Actual": 1,
+    "Ratxa Màxima": 1,
+    "Victòries":
+      {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+  }
+}
+```
 
-i el programa client mostrarà per pantalla una llista numerada amb totes les rèpliques que ha après, per exemple:
+Podeu fer servir [JSON-simple](https://code.google.com/archive/p/json-simple/) per validar un JSON en format string [especificació JSON](https://www.ietf.org/rfc/rfc4627.txt). Si el JSON està mal format s'enviarà un **ERROR** de *Missatge Mal Format*.
 
-    1) ¿Incluso antes de que huelan tu aliento?
-    2) Estaría acabado si la usases alguna vez.
-    3) ¡He oído que eres un soplón despreciable!
+C <------ STATS (Stats) --------- S
 
-L'usuari triarà un nombre de la llista i s'enviarà la rèplica:
+Els missatges d'error es podran enviar en qualsevol moment que el Servidor detecti alguna situació estranya durant l'execució de la partida. Quan el Client rebi un error l'haurà de mostrar per pantalla. El servidor davant dels errors no prendrà cap decisió, simplement es quedarà en l'estat actual esperant un nou missatge del client. El client segons sigui l'error pot o bé tornar a enviar un missatge o tancar la connexió amb el servidor.
 
-    c: COMEBACK: Estaría acabado si la usases alguna vez.
+C <------ ERROR (ErrCode,Msg) --------- S
 
-Qui mantingui el domini podrà llançar el següent insult. Com es deia
-anteriorment, **dos insults amb èxit** asseguraran la victòria dels
-combatents. El duel acaba fent servir el missatge de tipus SHOUT:
 
-    c: SHOUT ¡He ganado, Name2!
-    s: SHOUT ¡Has ganado, Name1!
-    
-Després es seguirà jugant un altra duel. Els pirates aprendran **un nou insult-replica aleatori** que no tinguin i enviaran un nou HASH d'un nou secret. 
+Un cop s'hagi acabat una partida, es podrà tornar a jugar una nova partida en la mateixa sessió, per fer això caldrà enviar el missatge **PLAY** 
 
-	c: HASH h(secret_c)
-  	s: HASH h(secret_s)
-    
-Si el jugador ha guanyat 3 duels l'adversari li dirà que és tan bo que podria lluitar amb
-la Sword Master de la illa Mêlée. Aquí donem per acabada la partida.
+C -----PLAY (SessionID)-----> S
 
-    c: SHOUT ¡He ganado, Name2!
-    s: SHOUT ¡Has ganado, Name1. Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+El client pot acabar quan vulgui les partides, només cal que es desconnecti. 
 
-Després d'acabar la partida, es pot començar una de nova fent **HELLO**. Sempre que s'usi el mateix ID i nom es podrà **mantenir els insults apresos fins ara i n'agafarà dos de nous que no tingui apresos**. En cas contari s'esborran els insults i se n'agafaran dos de nous.
-
-El Servidor sempre que comenci un partida nova amb **HELLO** serà un pirata nou i **esborrarà tots els insults i n'agafarà dos de nous.**
-
-Per deixar de jugar el client tallarà la connexió de socket amb el servidor. 
-
-Si ocorregués qualsevol problema al protocol els pirates faran servir el
-missatge de tipus ERROR i la lluita s'acabarà:
-
-    c/s: ERROR ¡Código de operación inválido, marinero de agua dulce! !Hasta la vista!
-    
+   
 Exemple partida
 ===============
 
+Exemple de partida. Els espais s'han posat per clairificar els missatges, però en la trama no hi són.
+
 ```
-C- HELLO 1234 Barbazul
-S- HELLO 9999 Jack Sparrow
+C- [TCP Connect]
+S- [TCP Accept]
 
-C- HASH AAAAAAAAAAAAAAAA #és fictici
-S- HASH BBBBBBBBBBBBBBBB #és fictici
-
-C- SECRET 1111
-S- SECRET 2222
-
-S- INSULT ¿Has dejado ya de usar pañales?  #Comença el Servidor pk la suma secret és imparell i el Servidor te el ID de nom més alt
-C- COMEBACK Qué apropiado, tú peleas como una vaca. #Punt per S insulta S
-
-S- INSULT  ¡No hay palabras para describir lo asqueroso que eres!
-C- COMEBACK Sí que las hay, sólo que nunca las has aprendido. # Punt per C insulta C
-
-C- INSULT ¡Una vez tuve un perro más listo que tu!
-S- COMEBACK Me alegra que asistieras a tu reunión familiar diaria. # Punt per C insulta C
-
-C- SHOUT ¡He ganado, Jack Sparrow! # 1-0
-S- SHOUT ¡Has ganado, Barbazul!
-
-C- HASH CCCCCCCCCCCCCCCC #és fictici #nou DUEL 
-S- HASH DDDDDDDDDDDDDDDD #és fictici
-
-C- SECRET 5555
-S- SECRET 1111
-
-C- INSULT ¿Has dejado ya de usar pañales? 
-S- COMEBACK ¿Por qué? ¿Acaso querías pedir uno prestado? #Punt per S insulta S
-
-S- INSULT ¡Una vez tuve un perro más listo que tu! 
-C- COMEBACK Te habrá enseñado todo lo que sabes. #Punt per C insulta C
-
-C- INSULT ¡Tienes los modales de un mendigo!
-S- COMEBACK Sí que las hay, sólo que nunca las has aprendido. #Punt per C insulta C
-
-C- SHOUT ¡He ganado, Jack Sparrow! # 2-0
-S- SHOUT ¡Has ganado, Barbazul!
-
-C- HASH .....
-......
-
-C- SHOUT ¡Has ganado, Jack Sparrow! # 2 -1
-S- SHOUT ¡He ganado, Barbazul!
-
-C- HASH ...
-.......
-
-C- SHOUT ¡Has ganado, Jack Sparrow! # 2 -2
-S- SHOUT ¡He ganado, Barbazul!
-
-C- HASH ...
-.......
-
-C- SHOUT ¡He ganado, Jack Sparrow! # 3-2
-S- SHOUT ¡Has ganado, Barbazul! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
-
-C- HELLO 2138 Barbaroja
-S- HELLO 3323 Patapalo
-C- HASH ...
-.......
-
-C- SHOUT ¡Has ganado, Patapalo! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
-S- SHOUT ¡He ganado, Barbazul! 
-
-C- HELLO 2138 Barbaroja
-S- HELLO 3122 Barbanegra
-C- HASH ...
-.......
-C- SHOUT ¡He ganado, Barbanegra! #
-S- SHOUT ¡Has ganado, Barbaroja! Eres tan bueno que podrias luchar contra la Sword Master de la isla Mêlée!
+HELLO  C -------1 0 Eloi 0 --------> S
+READY  C <------2 21293212 --------- S
+PLAY   C -------3 21293212 --------> S
+ADMIT  C <------4 1 ---------------- S
+WORD   C -------5 PINSO -----------> S
+RESULT C <------6 ***** ------------ S
+WORD   C -------5 MELER -----------> S
+RESULT C <------6 *^^^^ ------------ S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ^^^^^ ------------ S
+STATS  C <------7 {
+					  "Stats": {
+					    "Jugades": 1,
+					    "Èxits %": 100,
+					    "Ratxa Actual": 1,
+					    "Ratxa Màxima": 1,
+					    "Victòries":
+					      {
+					        "1": 0,
+					        "2": 0,
+					        "3": 1,
+					        "4": 0,
+					        "5": 0,
+					        "6": 0
+					      }
+					  }
+					} ------------- S
+PLAY   C -------3 21293212 --------> S
+ADMIT  C <------4 1 ---------------- S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ??*** ------------ S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ??*** ------------ S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ??*** ------------ S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ??*** ------------ S
+WORD   C -------5 TELER -----------> S
+RESULT C <------6 ??*** ------------ S
+WORD   C -------5 POTES -----------> S
+RESULT C <------6 ????? ------------ S
+WORD   C <------5 ESPOT ------------ S
+STATS  C <------7 {
+					  "Stats": {
+					    "Jugades": 2,
+					    "Èxits %": 50,
+					    "Ratxa Actual": 0,
+					    "Ratxa Màxima": 1,
+					    "Victòries":
+					      {
+					        "1": 0,
+					        "2": 0,
+					        "3": 1,
+					        "4": 0,
+					        "5": 0,
+					        "6": 0
+					      }
+					  }
+					} ------------- S
 
 C- [conexion closed]
 S- [conexion closed]
 
 ```
-
-
-
-
- Versió 2 jugadors
-==================
-
-A la versió de 2 jugadors el servidor farà de proxy de comunicació entre els dos clients dels dos jugadors. Si un client respon amb el mateix ID de nom que ha rebut, l'altre client ha d'enviar un missatge d'error i tancarà la connexió.
-
-  c: ERROR ¡No eres tú, soy yo! !Hasta la vista!
-
-Si un dels dos jugadors talla la connexió durant la partida s'enviarà un error a l'altra jugador i s'acabarà la partida. 
-
-
-[^1]: Veure: *https://en.wikipedia.org/wiki/Commitment_scheme*
-
-[^2]: Mireu: *https://www.baeldung.com/sha-256-hashing-java*
-
