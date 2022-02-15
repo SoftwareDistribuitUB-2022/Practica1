@@ -255,26 +255,26 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
                                     Figura 7: Missatge STATS
 
 	Format del JSON Stats expresat com a string:
+	
+		
+		{
+		  "Stats": {
+		    "Jugades": 1,
+		    "Èxits %": 100,
+		    "Ratxa Actual": 1,
+		    "Ratxa Màxima": 1,
+		    "Victòries":
+		      {
+		        "1": 0,
+		        "2": 0,
+		        "3": 1,
+		        "4": 0,
+		        "5": 0,
+		        "6": 0
+		      }
+		  }
+		}
 
-	```
-{
-  "Stats": {
-    "Jugades": 1,
-    "Èxits %": 100,
-    "Ratxa Actual": 1,
-    "Ratxa Màxima": 1,
-    "Victòries":
-      {
-        "1": 0,
-        "2": 0,
-        "3": 1,
-        "4": 0,
-        "5": 0,
-        "6": 0
-      }
-  }
-}
-```
 
 - El paquet **ERROR** (codi operació 8) té el format que es mostra en la Figura 8, on *ErrCode* és és un byte en format xarxa  i on *Msg* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
   
@@ -336,25 +336,25 @@ A Stats es va guardant les estadístiques sobre les partides del jugador durant 
 - Ratxa Màxima: Nombre màxim de partides guanyades consecutives.
 - Victòries: Quantes partides s'han guanyat amb 1, 2, 3, 4, 5 i 6 intents.
 
-```
-{
-  "Stats": {
-    "Jugades": 1,
-    "Èxits %": 100,
-    "Ratxa Actual": 1,
-    "Ratxa Màxima": 1,
-    "Victòries":
-      {
-        "1": 0,
-        "2": 0,
-        "3": 1,
-        "4": 0,
-        "5": 0,
-        "6": 0
-      }
-  }
-}
-```
+
+		{
+		  "Stats": {
+		    "Jugades": 1,
+		    "Èxits %": 100,
+		    "Ratxa Actual": 1,
+		    "Ratxa Màxima": 1,
+		    "Victòries":
+		      {
+		        "1": 0,
+		        "2": 0,
+		        "3": 1,
+		        "4": 0,
+		        "5": 0,
+		        "6": 0
+		      }
+		  }
+		}
+
 
 Podeu fer servir [JSON-simple](https://code.google.com/archive/p/json-simple/) per validar un JSON en format string [especificació JSON](https://www.ietf.org/rfc/rfc4627.txt). Si el JSON està mal format s'enviarà un **ERROR** de *Missatge Mal Format*.
 
@@ -377,71 +377,71 @@ Exemple partida
 
 Exemple de partida. Els espais s'han posat per clairificar els missatges, però en la trama no hi són.
 
-```
-C- [TCP Connect]
-S- [TCP Accept]
 
-HELLO  C -------1 0 Eloi 0 --------> S
-READY  C <------2 21293212 --------- S
-PLAY   C -------3 21293212 --------> S
-ADMIT  C <------4 1 ---------------- S
-WORD   C -------5 PINSO -----------> S
-RESULT C <------6 ***** ------------ S
-WORD   C -------5 MELER -----------> S
-RESULT C <------6 *^^^^ ------------ S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ^^^^^ ------------ S
-STATS  C <------7 {
-					  "Stats": {
-					    "Jugades": 1,
-					    "Èxits %": 100,
-					    "Ratxa Actual": 1,
-					    "Ratxa Màxima": 1,
-					    "Victòries":
-					      {
-					        "1": 0,
-					        "2": 0,
-					        "3": 1,
-					        "4": 0,
-					        "5": 0,
-					        "6": 0
-					      }
-					  }
-					} ------------- S
-PLAY   C -------3 21293212 --------> S
-ADMIT  C <------4 1 ---------------- S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ??*** ------------ S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ??*** ------------ S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ??*** ------------ S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ??*** ------------ S
-WORD   C -------5 TELER -----------> S
-RESULT C <------6 ??*** ------------ S
-WORD   C -------5 POTES -----------> S
-RESULT C <------6 ????? ------------ S
-WORD   C <------5 ESPOT ------------ S
-STATS  C <------7 {
-					  "Stats": {
-					    "Jugades": 2,
-					    "Èxits %": 50,
-					    "Ratxa Actual": 0,
-					    "Ratxa Màxima": 1,
-					    "Victòries":
-					      {
-					        "1": 0,
-					        "2": 0,
-					        "3": 1,
-					        "4": 0,
-					        "5": 0,
-					        "6": 0
-					      }
-					  }
-					} ------------- S
+	C- [TCP Connect]
+	S- [TCP Accept]
+	
+	HELLO  C -------1 0 Eloi 0 --------> S
+	READY  C <------2 21293212 --------- S
+	PLAY   C -------3 21293212 --------> S
+	ADMIT  C <------4 1 ---------------- S
+	WORD   C -------5 PINSO -----------> S
+	RESULT C <------6 ***** ------------ S
+	WORD   C -------5 MELER -----------> S
+	RESULT C <------6 *^^^^ ------------ S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ^^^^^ ------------ S
+	STATS  C <------7 {
+						  "Stats": {
+						    "Jugades": 1,
+						    "Èxits %": 100,
+						    "Ratxa Actual": 1,
+						    "Ratxa Màxima": 1,
+						    "Victòries":
+						      {
+						        "1": 0,
+						        "2": 0,
+						        "3": 1,
+						        "4": 0,
+						        "5": 0,
+						        "6": 0
+						      }
+						  }
+						} ------------- S
+	PLAY   C -------3 21293212 --------> S
+	ADMIT  C <------4 1 ---------------- S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ??*** ------------ S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ??*** ------------ S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ??*** ------------ S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ??*** ------------ S
+	WORD   C -------5 TELER -----------> S
+	RESULT C <------6 ??*** ------------ S
+	WORD   C -------5 POTES -----------> S
+	RESULT C <------6 ????? ------------ S
+	WORD   C <------5 ESPOT ------------ S
+	STATS  C <------7 {
+						  "Stats": {
+						    "Jugades": 2,
+						    "Èxits %": 50,
+						    "Ratxa Actual": 0,
+						    "Ratxa Màxima": 1,
+						    "Victòries":
+						      {
+						        "1": 0,
+						        "2": 0,
+						        "3": 1,
+						        "4": 0,
+						        "5": 0,
+						        "6": 0
+						      }
+						  }
+						} ------------- S
+	
+	C- [conexion closed]
+	S- [conexion closed]
 
-C- [conexion closed]
-S- [conexion closed]
 
-```
