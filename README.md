@@ -184,7 +184,7 @@ ADMIT    |4| S-C
 WORD     |5| C-S
 RESULT   |6| S-C
 STATS    |7| S-C
-ERROR    |8| S-C
+ERROR    |8| S-C/C-S
 
 
 La capçalera d'un missatge conté el codi d'operació associat amb
@@ -276,7 +276,7 @@ aquest paquet i els paràmetres necessaris. En les capçaleres dels missages que
 		}
 
 
-- El paquet **ERROR** (codi operació 8) té el format que es mostra en la Figura 8, on *ErrCode* és és un byte en format xarxa  i on *Msg* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)).
+- El paquet **ERROR** (codi operació 8) té el format que es mostra en la Figura 8, on *ErrCode* és és un byte en format xarxa  i on *Msg* és un codi com a string (string representa una cadena de bytes codificats en Extended ASCII en format de xarxa (Big Endian) acabat amb un últim byte 0 que és un byte en format de xarxa (Big Endian)). És bi-direccional.
   
 
 								1 byte    1 byte      string  1 byte
